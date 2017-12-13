@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	div.container
+		br
+		div.row
+			div.col-12.col-sm-12.col-md-6.col-lg-6
+				.product-wrapper
+					.product-heading
+						| #{product.product_title}
+					br
+					p <strong>PRICE:</strong> $ #{product.price}
+					p <strong>DESCRIPTION:</strong> "#{product.body}"
+					p <strong>SELLER:</strong> #{user.firstname} #{user.lastname}
+					p <strong>SELLER EMAIL:</strong> #{user.email}
+					| #[small CATEGORY: #{product.category}] | 
+					| #[small MATERIAL: #{product.category}] | 
+					| #[small COLOR: #{product.color}]
+					.posted-at
+						| <em> Posted at: #{product.createdAt} </em>
+					br
+					.see-all-products
+						a(href='/all_products') go back to products
+			div.col-12.col-sm-12.col-md-6.col-lg-6
+				.product-picture
+					img(src=`${product.product_image}`)
+		div.row
+			div.col-12.col-sm-12.col-md-6.col-lg-6
+				.commentform.text-center
+					form.col.s12(action='/product_one/' + product.id, method='POST', autocomplete='off')
+						h4 Leave a review
+						textarea(rows='9', name='review', placeholder='review' id='commentarea')
+						br
+						button.btn.btn-default#commentbutton(type="submit", name="submit") SUBMIT
+			div.col-12.col-sm-12.col-md-6.col-lg-6
+				.comment-heading
+					h4 User Reviews
+				.comments
+					if comments
+						each comment in comments
+							.single-comment
+								p "#{comment.review}"
+								p - #{comment.user.firstname}, #{comment.user.email}
+								.see-all
+									| Date: #{comment.createdAt}
+

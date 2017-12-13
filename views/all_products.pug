@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.container
+		br
+		h1 All Products
+		br
+		.flex-container
+			each product in productList
+				.product-container
+					h4 #{product.product_title}
+					.product-pic
+						img(src= `${product.product_image}`)
+					hr
+					a(href='/all_products/'+product.id) MORE INFO

@@ -1,0 +1,47 @@
+extends layout
+
+block content
+	div.container
+		br
+		h1 Profile
+		br
+		div.row
+			div.col-12.col-sm-12.col-md-4.col-lg-4
+				.profile-container
+					h2.text-center Hi, #{user.firstname}!
+					hr
+					h5 Profile information
+					br
+					h5 <strong> Name: </strong> #{user.firstname} #{user.lastname}
+					h5 <strong> Email:</strong> #{user.email}
+					br
+					.profile-image
+						img(src= `${user.profilePicture}`)
+			div.col-12.col-sm-12.col-md-4.col-lg-4
+				h2.text-center Your Products
+				hr
+				each product in userposts
+					.single-product
+						h6 <strong>#{product.product_title}</strong>
+						a(href='/all_products/'+product.id)  Info
+			div.col-12.col-sm-12.col-md-4.col-lg-4
+				h2.text-center The Site
+				hr
+				.the-site.text-center
+					h5.text-center Make sure to explore everywhere!
+					br
+					br
+					a(href='/all_products') All Products (including yours!)
+					br
+					br
+					a(href='/new_product') Add a new product
+					br
+					br
+					a(href='/faq') Frequently asked questions
+					br
+					br
+					a(href='/contact') Contact page
+					br
+					br
+					a(href='/logout') Logout of your profile
+					br

@@ -1,0 +1,55 @@
+extends layout
+
+block content
+	div.container
+		br
+		h1 FAQS
+		button.accordion How does your website work?
+		.panel
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum mollitia fugit sunt nulla accusamus ipsum inventore consequatur enim!
+		
+		button.accordion What products are allowed?
+		.panel
+			p  
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab praesentium cumque maxime unde tempore possimus animi quos asperiores. Aspernatur, commodi.
+			br
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab praesentium cumque maxime unde tempore possimus animi quos asperiores. Aspernatur, commodi.
+		
+		button.accordion How many products can you upload?
+		.panel
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolore cum sequi quam. Architecto distinctio, odio explicabo a voluptates minima quis maxime, laboriosam necessitatibus. Similique adipisci incidunt ab animi fuga.
+			br
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, quis, repellat? Mollitia molestiae sed laudantium! 
+		
+		button.accordion Where are you located?
+		.panel
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. At animi magnam, sint porro laboriosam. Enim veniam rem temporibus accusantium dolores obcaecati amet repellendus quis ad id eaque nulla tempore placeat unde voluptatibus modi, expedita dignissimos. Corporis ex non molestiae in, nisi consectetur saepe reiciendis officia asperiores, facere, deserunt perferendis dicta! 
+		
+		button.accordion Is there shipping capabilities yet?
+		.panel
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam doloribus, distinctio nostrum id facilis velit fugiat, ad tempore nesciunt soluta totam quas accusamus earum libero nam deleniti illo aliquid possimus iusto! Neque reiciendis laudantium iure velit voluptates voluptate fuga ut saepe quod, deleniti est quam, laboriosam earum iusto explicabo dolore iste ipsum excepturi. Qui ipsum inventore accusamus quae excepturi fugiat.
+	
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+	script.
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].onclick = function(){
+				this.classList.toggle("active");
+				
+				var panel = this.nextElementSibling;
+				
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+				}
+			}
+		}

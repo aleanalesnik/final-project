@@ -1,0 +1,59 @@
+extends layout
+
+block content
+	div.container
+		br
+		h1 Add Your Item
+		br
+		div.row
+			div.col-12.col-sm-12.col-md-12.col-lg-12
+				.new-product
+					form.col.s12(action='/new_product', method='POST', autocomplete='off', enctype='multipart/form-data')
+						
+						h4 Product Title
+						input(id='product-title', type='text', rows='2', name='product_title', placeholder='what is it?' required)
+						br
+						br
+
+						h4 Description
+						textarea(rows='9', name='body', placeholder='what does it look like?' required)
+						br
+						br
+
+						h4 Category
+						textarea(rows='2', name='category', placeholder='women\'s clothing, accessories, etc.' required)
+						br
+						br
+
+						h4 Product Image
+						input(type='file', name='product_image' id='image-upload' required)
+						br
+						br
+
+						h4 Color
+						textarea(rows='2', name='color', placeholder='i.g. black, pattern')
+						br
+						br
+
+						h4 Material
+						textarea(rows='2', name='material', placeholder='cotton, leather, etc.')
+						br
+						br
+
+						h4 Price
+						h6 <strong>(do NOT include € or $ signs)</strong>
+						br
+						textarea(rows='2', name='price', placeholder='$$$' required)
+						br
+						br
+						button.btn.btn-default#newproduct(type="submit", name="submit") SUBMIT
+					br
+					br
+	//- script.
+	//- 	function populateCustomerId(){
+	//- 		var selectBox = document.getElementById('selectBox');
+	//- 	/* selected value of dropdown */
+	//- 		var selectedCustomerId = selectBox.options[selectBox.selectedIndex].value;
+	//- 		/* selected value set to input field */
+	//- 	document.getElementById('customerId').value = selectedCustomerId; 
+	//- 	}

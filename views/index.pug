@@ -1,0 +1,36 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title Final Project
+		link(rel="stylesheet" href="/css/fonts/fonts.css")
+		link(rel="stylesheet" href="/css/bootstrap.css") 
+		link(rel="stylesheet" href="/css/style.css")    
+	body#landingpage
+	.container
+		.home-container.text-center
+			h2 BuyMyClothes™
+			hr#line
+			if user
+				h5 Hey! You're already signed in.
+				a(href='/profile') go to your profile
+				br
+				a(href='/logout') log out
+			else
+				h5#error-message= message
+				h2 Log In
+				form(action='/' method='post' autocomplete='off')
+					p email
+					input#email(name='email' required)
+					br
+					p password
+					input(name='password' type='password' required)
+					br
+					br
+					button#login(type="submit", name="submit") login
+					br
+				hr
+				h4 Not a user?
+				a(href='/signup') sign up here
+				br

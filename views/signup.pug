@@ -1,0 +1,52 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title Final Project
+		link(rel="stylesheet" href="/css/fonts/fonts.css")
+		link(rel="stylesheet" href="/css/bootstrap.css") 
+		link(rel="stylesheet" href="/css/style.css")    
+	body#signup-page
+	.container#signup-page
+		.signup-container.text-center
+			br
+			h2 Sign Up
+			hr
+			form#myform.col.s12(action='/signup', method='POST', autocomplete='off', enctype='multipart/form-data' attr='myform')
+				h5 First Name
+				input(type='text', name='firstname', placeholder='first name' required)
+				br
+				br
+				h5 Last Name
+				input(type='text', name='lastname', placeholder='last name' required)
+				br
+				br
+				h5 Email
+				input(type='text', name='email', placeholder='Enter your email' required)
+				br
+				br
+				h5 Password
+				input#password(name='password', type='password' required)
+				br
+				br
+				h5 Confirm Password:
+				input#password_confirm(name='password_confirm', required='required', type='password', oninput='check(this)')
+				br
+				br
+				h5 Profile Picture
+				input(type='file', name='profileImage' id='signup-upload')
+				br
+				br
+				button.btn.btn-default#signup(type="submit", name="submit" value="click") CREATE ACCOUNT
+				p= message
+
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+	script.
+		function check(input) {
+			if (input.value != document.getElementById('password').value) {
+				input.setCustomValidity('Password Must be Matching.');
+			} else {
+				input.setCustomValidity('');
+			}
+		}
