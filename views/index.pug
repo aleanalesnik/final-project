@@ -10,8 +10,8 @@ html
 	body#landingpage
 	.container
 		.home-container.text-center
-			h2 BuyMyClothes™
-			hr#line
+			h1#landing BuyMyClothes™
+			hr
 			if user
 				h5 Hey! You're already signed in.
 				a(href='/profile') go to your profile
@@ -20,11 +20,12 @@ html
 			else
 				h5#error-message= message
 				h2 Log In
+				br
 				form(action='/' method='post' autocomplete='off')
-					p email
+					h5 email
 					input#email(name='email' required)
 					br
-					p password
+					h5 password
 					input(name='password' type='password' required)
 					br
 					br

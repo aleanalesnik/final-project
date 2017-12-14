@@ -27,11 +27,11 @@ html
 				br
 				br
 				h5 Password
-				input#password(name='password', type='password' required)
+				input#password(name='password', type='password' minlength='8' required)
 				br
 				br
 				h5 Confirm Password:
-				input#password_confirm(name='password_confirm', required='required', type='password', oninput='check(this)')
+				input#password_confirm(name='password_confirm', required='required', minlength='8', type='password', oninput='check(this)')
 				br
 				br
 				h5 Profile Picture

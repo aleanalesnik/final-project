@@ -1,7 +1,6 @@
 /* ---------------------------------------------------------------------------
-               NAV BAR
+               BOOTSTRAP NAVIGATION BAR
 ------------------------------------------------------------------------------*/
-
 
 /*.nav-link:hover {
     background-color: black;
@@ -28,8 +27,10 @@ a:hover {
 
 
 a.nav-link {
+    letter-spacing: 2px;
+    font-weight: 300;
+    font-family: 'Roboto';
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 a.nav-link:hover {
@@ -37,22 +38,19 @@ a.nav-link:hover {
 }
 
 a:hover {
-    background-color: blue;
+    background-color: black;
     color: white;
     cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
+
 }
 
 #logo {
     letter-spacing: 2px;
     font-weight: 300;
     color: white;
+    font-family: 'TrashHand';
+    font-size: 1.5rem;
 }
-
-/*a {
-    text-decoration: none;
-}*/
 
 
 /* ---------------------------------------------------------------------------
@@ -60,8 +58,17 @@ a:hover {
 ------------------------------------------------------------------------------*/
 
 
+* {
+    font-family: 'Bebas Kai';
+    color: black;
+}
+
+body {
+    background-color: white;
+}
+
 html {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -70,31 +77,37 @@ a {
     color: black;
 }
 
-
 h1 {
+    font-family: 'TrashHand';
     text-align: center;
-    background-color: black;
-    font-size: 2.7rem;
+    font-size: 4rem;
     color: white;
-    text-transform: uppercase;
+    background-color: black;
     letter-spacing: 2px;
 }
 
+
+
 /*h1 {
-    font-size: 2.7rem;
+    font-family: 'TrashHand';
     text-align: center;
+    background-color: black;
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }*/
 
 h2 {
-    font-size: 2.3rem;
+
+    font-size: 2.5rem;
     margin:0;
     padding:0;
 }
 
 h3 {
     font-size: 2rem;
-    text-decoration: underline;
-    margin:15px;
+    margin:0;
     padding:0;
 }
 
@@ -105,7 +118,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin:0;
     padding:0;
     text-transform: uppercase;
@@ -119,17 +132,10 @@ h6 {
 }
 
 
-/*
-h6 {
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    display: inline-block;
-}*/
-
-
 p {
     font-size: 1rem;
+    font-family: 'Roboto';
+    text-transform: uppercase;
 }
 
 
@@ -138,6 +144,9 @@ input {
 }
 
 
+button{
+    font-family: 'Bebas Kai';
+}
 
 
 
@@ -151,6 +160,15 @@ body#landingpage {
   -o-background-size: cover;
   background-size: cover;
 
+}
+
+#landing {
+    font-family: 'TrashHand';
+    text-align: center;
+    font-size: 3.2rem;
+    color: white;
+    background-color: black;
+    letter-spacing: 2px;
 }
 
 
@@ -188,10 +206,6 @@ body#landingpage {
     background: rgba(152, 161, 138, 0.5);
     display: inline-block;
 }
-
-
-
-
 
 
 
@@ -239,7 +253,6 @@ body#signup-page {
 /* -------------------- PROFILE SECTION -------------------- */
 
 
-
 .profile-container {
     width: 100%;
     height: 490px;
@@ -257,23 +270,15 @@ body#signup-page {
 
 
 /* ---------- USER'S PRODUCTS SECTION -------------------- */
-
-
-
 .single-product {
-    border: 1px solid grey;
-    width: 100%;
+    width: 50%;
     height: auto;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: inline-block;
 }
-
-
-
-
-
 
 
 
@@ -315,14 +320,11 @@ textarea {
 
 
 
-
-
 /* ---------------------------------------------------------------------------
                 ONE PRODUCT (product_one.pug)
 ------------------------------------------------------------------------------*/
 
 /* ---------------------------- THE PRODUCT ITSELF ---------------------------- */
-
 .product-wrapper {
     text-align: left;
     width: 100%;
@@ -363,11 +365,21 @@ textarea {
     font-size: 0.8rem;
     margin: 0;
     padding: 0;
+    color: grey;
+    text-align: left;
+}
+
+#price {
+    color: blue;
 }
 
 
 
 /* ---------------------------- COMMENTS ---------------------------- */
+#comment {
+    border: 3px solid black;
+    background-color: #eee;
+}
 
 .commentform {
     width: 100%;
@@ -382,10 +394,6 @@ textarea#commentarea {
     width: 100%;
     height: 200px;
     text-align: center;
-}
-
-#comment-submit {
-    border: 1px solid black;
 }
 
 #commentbutton {
@@ -411,7 +419,7 @@ textarea#commentarea {
 }
 
 .single-comment {
-    border: 1px solid black;
+    border: 1px solid #eee;
     margin: 10px;
     padding: 5px;
 }
@@ -422,16 +430,6 @@ textarea#commentarea {
     font-style: italic;
     color: grey;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -460,27 +458,12 @@ textarea#commentarea {
 }
 
 
-
-
 .product-pic img {
     width: 150px;
     height: auto;
     /*max-height: 120px;*/
     object-fit: contain;
 }
-
-
-
-/*.product-pic img {
-    object-fit: contain;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-}*/
-
-
-
-
 
 
 
@@ -491,6 +474,7 @@ textarea#commentarea {
 
 
 button.accordion {
+    font-family: 'Bebas Kai';
 	width: 100%;
     padding: 18px;
     margin: 5px;
@@ -519,25 +503,11 @@ div.panel {
 
 
 
-
-#comment {
-    border: 3px solid black;
-    background-color: #eee;
-}
-
-
-
-
-
-
 /* ---------------------------------------------------------------------------
                 CONTACT PAGE
 ------------------------------------------------------------------------------*/
 
-
-
-
-
+/*      N/A      */
 
 
 

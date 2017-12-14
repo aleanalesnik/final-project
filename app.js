@@ -85,9 +85,8 @@ const Product = sequelize.define('products', {
     body: { type: Sequelize.TEXT },
     category: { type: Sequelize.STRING },
     color: { type: Sequelize.STRING },
-    material: { type: Sequelize.STRING },
+    brand: { type: Sequelize.STRING },
     price: { type: Sequelize.INTEGER },
-    likes: { type: Sequelize.INTEGER },
     product_image: { type: Sequelize.STRING }
 })
 
@@ -113,18 +112,11 @@ sequelize.sync();
 
 
 
+/* -----------------------------------------------------------
+        ######### R O U T E S #########
+-------------------------------------------------------------*/
 
 
-// routing
-
-app.get('/faq', function(request, response) {
-    response.render('faq')
-});
-
-
-app.get('/contact', function(request, response) {
-    response.render('contact')
-});
 
 
 /* -----------------------------------------------------------
@@ -156,7 +148,7 @@ app.post('/', function(request, response) {
                     if (res) {
                         request.session.user = user;
                         console.log('SESSION IS' + request.session.user);
-                        response.redirect('profile');
+                        response.redirect('/profile');
                     } else {
                         response.redirect('/?message=' + encodeURIComponent('Login not successful! Please try again.'));
                     }
@@ -210,11 +202,11 @@ app.post('/signup', upload.single('profileImage'), (req, res, next) => {
                       PROFILE PAGES
 -------------------------------------------------------------*/
 
-// GET profile.pug 
+// GET profile.pug
+
 
 app.get('/profile', function(request, response) {
     const banana = request.session.user;
-
     Product.findAll({
             where: {
                 userId: banana.id
@@ -232,7 +224,6 @@ app.get('/profile', function(request, response) {
             response.render('profile', { user: banana, userposts: mapped });
         })
 });
-
 
 
 // GET profile_one.pug --- indiv. profile page
@@ -290,7 +281,7 @@ var userId = req.session.user.id
             category: req.body.category,
             body: req.body.body,
             color: req.body.color,
-            material: req.body.material,
+            brand: req.body.brand,
             price: req.body.price,
             product_image: path
         })
@@ -360,7 +351,6 @@ app.get('/all_products/:productId', function(req, res) {
 });
 
 
-
 /* -----------------------------------------------------------
                       ALL USERS
 -------------------------------------------------------------*/
@@ -385,7 +375,6 @@ app.get('/allusers', function(request, response) {
         });
     });
 });
-
 
 
 
@@ -416,6 +405,27 @@ app.post('/product_one/:productId', function(req, res) {
         .then((comment) => {
             res.redirect(`/all_products/${comment.productId}`);
         })
+});
+
+
+
+/* -----------------------------------------------------------
+                        FAQ
+-------------------------------------------------------------*/
+
+// GET (faq.pug)
+app.get('/faq', function(request, response) {
+    response.render('faq')
+});
+
+
+
+/* -----------------------------------------------------------
+                        CONTACT
+-------------------------------------------------------------*/
+// GET (contact.pug)
+app.get('/contact', function(request, response) {
+    response.render('contact')
 });
 
 

@@ -6,42 +6,33 @@ block content
 		h1 Profile
 		br
 		div.row
+			div.col-12.col-sm-12.col-md-2.col-lg-2
+				h2 Links
+				hr
+				a(href='/all_products') All Products
+				br
+				a(href='/new_product') Add A New Item
+				br
+				a(href='/faq') FAQ
+				br
+				a(href='/contact') Contact
+				br
+				a(href='/logout') Logout
+				br
 			div.col-12.col-sm-12.col-md-4.col-lg-4
-				.profile-container
-					h2.text-center Hi, #{user.firstname}!
-					hr
-					h5 Profile information
-					br
-					h5 <strong> Name: </strong> #{user.firstname} #{user.lastname}
-					h5 <strong> Email:</strong> #{user.email}
-					br
-					.profile-image
+				h2.text-center My Account
+				hr
+				h5 Name: #{user.firstname} #{user.lastname}
+				h5 Email: #{user.email}
+				.profile-image
 						img(src= `${user.profilePicture}`)
-			div.col-12.col-sm-12.col-md-4.col-lg-4
-				h2.text-center Your Products
+			div.col-12.col-sm-12.col-md-6.col-lg-6
+				h2.text-center My Products
 				hr
 				each product in userposts
 					.single-product
-						h6 <strong>#{product.product_title}</strong>
-						a(href='/all_products/'+product.id)  Info
-			div.col-12.col-sm-12.col-md-4.col-lg-4
-				h2.text-center The Site
-				hr
-				.the-site.text-center
-					h5.text-center Make sure to explore everywhere!
-					br
-					br
-					a(href='/all_products') All Products (including yours!)
-					br
-					br
-					a(href='/new_product') Add a new product
-					br
-					br
-					a(href='/faq') Frequently asked questions
-					br
-					br
-					a(href='/contact') Contact page
-					br
-					br
-					a(href='/logout') Logout of your profile
-					br
+						h5 #{product.product_title}
+							br
+							a(href='/all_products/'+product.id)  Info
+						.product-picture
+							img(src=`${product.product_image}`)

@@ -19,9 +19,14 @@ block content
 						textarea(rows='9', name='body', placeholder='what does it look like?' required)
 						br
 						br
-
 						h4 Category
-						textarea(rows='2', name='category', placeholder='women\'s clothing, accessories, etc.' required)
+						select(name='category')
+							option(value='Women\'s Clothing') Women's Clothing
+							option(value='Women\'s Shoes') Women's Shoes
+							option(value='Men\'s Clothing') Men's Clothing
+							option(value='Men\'s Shoes') Men's Shoes
+							option(value='Accessories') Accessories
+							option(value='Other') Other
 						br
 						br
 
@@ -29,14 +34,29 @@ block content
 						input(type='file', name='product_image' id='image-upload' required)
 						br
 						br
-
 						h4 Color
-						textarea(rows='2', name='color', placeholder='i.g. black, pattern')
+						select(name='color')
+							option(value='beige')  Beige
+							option(value='black')  Black
+							option(value='blue')  Blue
+							option(value='brown')  Brown
+							option(value='denim')  Denim
+							option(value='bold')  Gold
+							option(value='grey')  Grey
+							option(value='breen')  Green
+							option(value='multi-color')  Multi-color
+							option(value='orange')  Orange
+							option(value='pink')  Pink
+							option(value='purple')  Purple
+							option(value='red')  Red
+							option(value='silver')  Silver
+							option(value='white')  White
+							option(value='yellow')  Yellow
 						br
 						br
 
-						h4 Material
-						textarea(rows='2', name='material', placeholder='cotton, leather, etc.')
+						h4 Brand
+						textarea(rows='2', name='brand', placeholder='Topshop, Vintage, etc.')
 						br
 						br
 
