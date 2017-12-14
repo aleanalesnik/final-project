@@ -378,8 +378,9 @@ app.get('/allusers', function(request, response) {
 
 
 
+
 /* -----------------------------------------------------------
-                      COMMENTS
+             INDIVIDUAL PRODUCT & COMMENTS
 -------------------------------------------------------------*/
 
 // POST (product_one.pug) --- no indiv pug page
@@ -406,6 +407,8 @@ app.post('/product_one/:productId', function(req, res) {
             res.redirect(`/all_products/${comment.productId}`);
         })
 });
+
+
 
 
 

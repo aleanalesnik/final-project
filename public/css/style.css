@@ -2,21 +2,6 @@
                BOOTSTRAP NAVIGATION BAR
 ------------------------------------------------------------------------------*/
 
-/*.nav-link:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-}
-*/
-
-/*
-a:hover {
-    background-color: black;
-    display: inline-block;
-    color: white;
-}*/
-
 .bg-inverse {
   background-color: black !important;
 }
@@ -135,7 +120,6 @@ h6 {
 p {
     font-size: 1rem;
     font-family: 'Roboto';
-    text-transform: uppercase;
 }
 
 
@@ -148,6 +132,11 @@ button{
     font-family: 'Bebas Kai';
 }
 
+a {
+   font-size: 0.9rem;
+   font-family: 'Roboto';
+   text-transform: uppercase; 
+}
 
 
 /* ---------------------------------------------------------------------------
@@ -269,8 +258,14 @@ body#signup-page {
 }
 
 
+.links {
+    color: blue;
+}
+
+
 /* ---------- USER'S PRODUCTS SECTION -------------------- */
 .single-product {
+    border: 1px solid #eee;
     width: 50%;
     height: auto;
     text-align: center;

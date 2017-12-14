@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	div.container
+		h1 Update Your Product
+		form.col.s12(action='/edit_product/'+ productId, method='POST', autocomplete='off' id='form')
+			h4 Update Product Title
+			input(id='product-title', type='text', rows='2', name='product_title')
+			br
+			br
+			h4 Update Description
+			textarea(rows='9', name='body', placeholder='what does it look like?')
+			br
+			br
+			h4 Update Price
+			br
+			textarea(rows='2', name='price', placeholder='$$$')
+			br
+			br
+			button.btn.btn-default(type="submit", name="submit") Edit the ORDER 
+		br
+		a(href='/profile') Go Back to your Profile
+		br
+		a(href='/all_products') View All Products
+		br
+		a(href='/logout') Click here to Logout

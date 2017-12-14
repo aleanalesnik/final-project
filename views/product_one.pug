@@ -8,9 +8,9 @@ block content
 				.product-wrapper
 					h1 #{product.product_title}
 					p "#{product.body}"
-					h4#price Price: $#{product.price}
-					h4 Seller: #{user.firstname} #{user.lastname}
-					h4 #{user.email}
+					p#price <strong>Price:</strong> $#{product.price}
+					p <strong>Seller:</strong> #{user.firstname} #{user.lastname}
+					p <strong>Seller Email:</strong> #{user.email}
 					hr
 					h6 #{product.category} | #{product.brand} | #{product.color}
 					.posted-at
@@ -38,4 +38,3 @@ block content
 								br
 								.see-all
 									| Date: #{comment.createdAt}
-

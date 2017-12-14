@@ -9,25 +9,26 @@ block content
 			div.col-12.col-sm-12.col-md-2.col-lg-2
 				h2 Links
 				hr
-				a(href='/all_products') All Products
-				br
-				a(href='/new_product') Add A New Item
-				br
-				a(href='/faq') FAQ
-				br
-				a(href='/contact') Contact
-				br
-				a(href='/logout') Logout
-				br
+				.links
+					a(href='/all_products') All Products
+					br
+					a(href='/new_product') Add A New Item
+					br
+					a(href='/faq') FAQ
+					br
+					a(href='/contact') Contact
+					br
+					a(href='/logout') Logout
+					br
 			div.col-12.col-sm-12.col-md-4.col-lg-4
 				h2.text-center My Account
 				hr
-				h5 Name: #{user.firstname} #{user.lastname}
-				h5 Email: #{user.email}
+				h5.text-center Name: #{user.firstname} #{user.lastname}
+				h5.text-center Email: #{user.email}
 				.profile-image
 						img(src= `${user.profilePicture}`)
 			div.col-12.col-sm-12.col-md-6.col-lg-6
-				h2.text-center My Products
+				h2.text-center Your Closet
 				hr
 				each product in userposts
 					.single-product
