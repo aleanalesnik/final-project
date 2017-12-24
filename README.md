@@ -1,7 +1,6 @@
-# final-project
+# BuyMyClothes.com
 An app to sell your unwanted clothes!
 
-## BuyMyClothes.com
 <p align="center">
   <img width="500" height="auto" src="https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/landingpage.png">
 </p>
