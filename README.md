@@ -1,13 +1,24 @@
 # final-project
 An app to sell your unwanted clothes!
 
-![banner](https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/landingpage.png)
-> Welcome to BuyMyClothes.com!
+## BuyMyClothes.com
+<p align="center">
+  <img width="500" height="auto" src="https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/landingpage.png">
+</p>
 
-![banner](https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/profile.png)
-> User Profile Page with responsive drop down menu
+### Profile Page
+
+<p align="center">
+  <img width="500" height="auto" src="https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/profile.png">
+</p>
+
+### All Products
+<p align="center">
+  <img width="500" height="auto" src="https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/allproducts.png">
+</p>
 
 ## Libraries, Technologies & Languages
+
 - JavaScript
 - SQL
 - PostgreSQL
@@ -18,10 +29,6 @@ An app to sell your unwanted clothes!
 - Sequelize
 - Sessions
 - Multer
-
-![banner](https://github.com/aleanalesnik/final-project/blob/master/public/images/screenshots/allproducts.png)
-> All products that are posted to the web application are shown here
-
 
 ## Usage
 
